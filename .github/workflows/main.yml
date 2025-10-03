@@ -30,4 +30,17 @@ jobs:
           with:
             path: NotAVirus/PhysicsGame
 
-          
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      - name: Create a Release
+        uses: elgohr/Github-Release-Action@v5
+      
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v4
+      
+      - name: GitHub Releases
+        uses: fnkr/github-action-ghr@v1.3
