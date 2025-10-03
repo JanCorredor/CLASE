@@ -20,14 +20,14 @@ jobs:
           run:  msbuild .\PhysicsGame.sln /p:Configuration=Release
 
        -  name: Create artifact directory
-          run: mkdir artifact/PhysicsGame
+          run: mkdir NotAVirus/PhysicsGame
 
        -  name: Copy the executable to the artifact directory
-          run: copy .\Build\PhysicsGame\Release\Win32\PhysicsGame.exe artifact/PhysicsGame/
+          run: copy .\Build\PhysicsGame\Release\Win32\PhysicsGame.exe NotAVirus/PhysicsGame/
           
        -  name: Upload artifact
           uses: actions/upload-artifact@v4
           with:
-            path: artifact/PhysicsGame
+            path: NotAVirus/PhysicsGame
 
           
